@@ -7,6 +7,15 @@
         Name: Web-Server
       register: iis
 
+    - name: Install xWebAdministration Module
+      win_psmodule:
+        name: xWebAdministration
+
+    - name: Create Web Root Directory
+      win_file:
+        path: C:\example.com
+        state: directory
+
     - name: Remove Default Site
       win_dsc:
         resource_name: xWebsite
