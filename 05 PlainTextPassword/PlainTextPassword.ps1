@@ -18,4 +18,4 @@ Configuration UserConfig
     }
 }
 
-UserConfig
+UserConfig -OutputPath Out

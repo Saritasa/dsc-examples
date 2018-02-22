@@ -20,4 +20,4 @@ Configuration EnvironmentConfig
     }
 }
 
-EnvironmentConfig -Servers Server1, Server2 -Environment Production
+EnvironmentConfig -Servers Server1, Server2 -Environment Production -OutputPath Out

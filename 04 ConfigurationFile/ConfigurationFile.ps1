@@ -34,4 +34,4 @@ Configuration FileConfig
 $indexContent = Get-Content 'index.html' | Out-String
 
 FileConfig -ConfigurationData .\ConfigurationData.psd1 `
-    -IndexContent $indexContent
+    -IndexContent $indexContent -OutputPath Out

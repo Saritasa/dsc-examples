@@ -21,4 +21,4 @@ Configuration EnvironmentConfig
     }
 }
 
-EnvironmentConfig
+EnvironmentConfig -OutputPath Out

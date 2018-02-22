@@ -73,4 +73,4 @@ Configuration WebApplication
 $indexContent = Get-Content 'index.html' | Out-String
 
 WebApplication -ConfigurationData .\ConfigurationData.psd1 `
-    -IndexContent $indexContent
+    -IndexContent $indexContent -OutputPath Out

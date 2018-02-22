@@ -18,4 +18,4 @@ Configuration UserConfig
     }
 }
 
-UserConfig -ConfigurationData .\ConfigurationData.psd1
+UserConfig -ConfigurationData .\ConfigurationData.psd1 -OutputPath Out

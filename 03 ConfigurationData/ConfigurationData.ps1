@@ -21,4 +21,4 @@ $data =
         )
     }
 
-EnvironmentConfig -ConfigurationData $data
+EnvironmentConfig -ConfigurationData $data -OutputPath Out
