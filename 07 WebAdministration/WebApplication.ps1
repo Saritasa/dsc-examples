@@ -27,6 +27,7 @@ Configuration IisConfig
         Name         = 'MyWebSite'
         State        = 'Started'
         PhysicalPath = "C:\$SiteName"
+        BindingInfo  = @(MSFT_xWebBindingInformation { Protocol = 'http'; Port = 80 })
         DependsOn    = '[xWebsite]RemoveDefaultSite'
     }
 }

@@ -3,21 +3,24 @@
     - name: Install IIS
       win_dsc:
         resource_name: WindowsFeature
-        ensure: Present
-        name: Web-Server
+        Ensure: Present
+        Name: Web-Server
       register: iis
 
     - name: Remove Default Site
       win_dsc:
         resource_name: xWebsite
-        ensure: Absent
-        name: Default Web Site
-      when: iis.dsc_attributes.ensure == 'Present'
+        Ensure: Absent
+        Name: Default Web Site
+      when: iis.dsc_attributes.Ensure == 'Present'
 
     - name: New Site
       win_dsc:
         resource_name: xWebsite
-        name: MyWebSite
-        state: Started
-        physicalPath: C:\example.com
-      when: iis.dsc_attributes.ensure == 'Present'
+        Name: MyWebSite
+        State: Started
+        PhysicalPath: C:\example.com
+        BindingInfo:
+          - Protocol: http
+            Port: 80
+      when: iis.dsc_attributes.Ensure == 'Present'
