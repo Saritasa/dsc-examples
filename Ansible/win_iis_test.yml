@@ -1,0 +1,15 @@
+- hosts: web
+  tasks:
+    - name: Remove Default Site
+      win_iis_website:
+        resource_name: xWebsite
+        name: Default Web Site
+        state: absent
+
+    - name: New Site
+      win_iis_website:
+        resource_name: xWebsite
+        name: MyWebSite
+        state: started
+        physical_path: C:\example.com
+        port: 80

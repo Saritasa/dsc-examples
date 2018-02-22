@@ -23,5 +23,6 @@ Execute Playbook
 ----------------
 
 ```sh
-ansible-playbook -i inventory web_application.yml
+ansible-playbook -i inventory win_dsc_test.yml
+ansible-playbook -i inventory win_iis_test.yml
 ```
