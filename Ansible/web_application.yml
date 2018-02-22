@@ -1,0 +1,23 @@
+- hosts: web
+  tasks:
+    - name: Install IIS
+      win_dsc:
+        resource_name: WindowsFeature
+        ensure: Present
+        name: Web-Server
+      register: iis
+
+    - name: Remove Default Site
+      win_dsc:
+        resource_name: xWebsite
+        ensure: Absent
+        name: Default Web Site
+      when: iis.dsc_attributes.ensure == 'Present'
+
+    - name: New Site
+      win_dsc:
+        resource_name: xWebsite
+        name: MyWebSite
+        state: Started
+        physicalPath: C:\example.com
+      when: iis.dsc_attributes.ensure == 'Present'

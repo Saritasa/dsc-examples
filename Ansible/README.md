@@ -18,3 +18,10 @@ Test Connection
 ```sh
 ansible -i inventory -m win_ping web
 ```
+
+Execute Playbook
+----------------
+
+```sh
+ansible-playbook -i inventory web_application.yml
+```
