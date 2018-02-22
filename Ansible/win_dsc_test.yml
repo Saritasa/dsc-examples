@@ -5,7 +5,6 @@
         resource_name: WindowsFeature
         Ensure: Present
         Name: Web-Server
-      register: iis
 
     - name: Install xWebAdministration Module
       win_psmodule:
@@ -21,7 +20,6 @@
         resource_name: xWebsite
         Ensure: Absent
         Name: Default Web Site
-      when: iis.dsc_attributes.Ensure == 'Present'
 
     - name: New Site
       win_dsc:
@@ -32,4 +30,3 @@
         BindingInfo:
           - Protocol: http
             Port: 80
-      when: iis.dsc_attributes.Ensure == 'Present'
